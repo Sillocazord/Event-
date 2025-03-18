@@ -24,4 +24,4 @@ namespace Eventplus_api_senai.Domais
         [StringLength(14)]
         public string? CNPJ { get; set; }
     }
-}
+} 

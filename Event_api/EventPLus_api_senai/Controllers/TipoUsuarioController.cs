@@ -8,37 +8,35 @@ namespace Eventplus_api_senai.Controllers
     [Route("api/[controller]")]
     [ApiController]
     [Produces("application/json")]
-
-    public class TipoEventoController : ControllerBase
+    public class TipoUsuarioController : ControllerBase
     {
-        private readonly ITipoEventoRepository _tipoeventoRepository;
-        public TipoEventoController(ITipoEventoRepository eventoRepository)
+        private readonly ITipoUsuarioRepository _tipoUsuarioRepository;
+        public TipoUsuarioController(ITipoUsuarioRepository tipoUsuarioRepository)
         {
-            _tipoeventoRepository = eventoRepository;
+            _tipoUsuarioRepository = tipoUsuarioRepository;
         }
 
         [HttpGet]
-        public ActionResult Get() 
+        public IActionResult Get()
         {
             try
             {
-                return Ok(_tipoeventoRepository.Listar());
+                return Ok(_tipoUsuarioRepository.Listar());
             }
             catch (Exception e)
             {
 
                 return BadRequest(e.Message);
             }
-        
+
         }
 
-
         [HttpPost]
-        public IActionResult Post(TipoEvento novoTipoEvento)
+        public IActionResult Post(TipoUsuario novoTipoUsuario)
         {
             try
             {
-                _tipoeventoRepository.Cadastro(novoTipoEvento);
+                _tipoUsuarioRepository.Cadastro(novoTipoUsuario);
                 return Created();
             }
             catch (Exception e)
@@ -47,15 +45,15 @@ namespace Eventplus_api_senai.Controllers
                 return BadRequest(e.Message);
             }
 
+
         }
 
-
         [HttpGet("BuscarPorId/{id}")]
-        public ActionResult GetById(Guid id)
+        public IActionResult GetById(Guid id)
         {
             try
             {
-                TipoEvento tipoBuscado = _tipoeventoRepository.BuscarPorId(id);
+                TipoUsuario tipoBuscado = _tipoUsuarioRepository.BuscarPorId(id);
                 return Ok(tipoBuscado);
             }
             catch (Exception)
@@ -66,13 +64,12 @@ namespace Eventplus_api_senai.Controllers
 
         }
 
-
         [HttpDelete("{id}")]
-        public ActionResult Delete(Guid id) 
+        public IActionResult Delete(Guid id)
         {
             try
             {
-                _tipoeventoRepository.Deletar(id);
+                _tipoUsuarioRepository.Deletar(id);
                 return NoContent();
             }
             catch (Exception)
@@ -80,17 +77,15 @@ namespace Eventplus_api_senai.Controllers
 
                 throw;
             }
-        
-        
+
         }
 
-
         [HttpPut("{id}")]
-        public IActionResult Put(Guid id, TipoEvento tipoEvento)
+        public IActionResult Put(Guid id, TipoUsuario tipoUsuario)
         {
             try
             {
-                _tipoeventoRepository.Atualizar(id, tipoEvento);
+                _tipoUsuarioRepository.Atualizar(id, tipoUsuario);
                 return NoContent();
             }
             catch (Exception e)
@@ -98,8 +93,8 @@ namespace Eventplus_api_senai.Controllers
 
                 return BadRequest(e.Message);
             }
-
+        
+        
         }
-       
     }
 }
