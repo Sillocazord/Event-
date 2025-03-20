@@ -8,7 +8,7 @@ namespace Eventplus_api_senai.Interfaces
         List<Evento> Listar();
         void Deletar(Guid id);
         void Atualizar(Guid id,Evento evento);
-        List<Evento> ListarProximosEventos();
+        List<Evento> ListarProximosEventos(Guid id);
         List<Evento> ListarPorId(Guid id);
     }
 }

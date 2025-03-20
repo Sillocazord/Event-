@@ -4,10 +4,10 @@ namespace Eventplus_api_senai.Interfaces
 {
     public interface IFeedbackRepository
     {
-        Feedback Cadastrar(Feedback novoFeedback);
+        void Cadastrar(Feedback novoFeedback);
         void Deletar (Guid id);
-        List<Feedback> Listar(Guid id);
+        List<Feedback> Listar();
 
-        Feedback BuscarPorIdUsuario(Guid usuarioId, Guid eventoId);
+        Feedback BuscarPorIdUsuario(Guid UsuarioId, Guid EventoId);
     }
 }

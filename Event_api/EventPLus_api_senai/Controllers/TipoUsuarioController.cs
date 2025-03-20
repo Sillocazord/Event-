@@ -16,6 +16,10 @@ namespace Eventplus_api_senai.Controllers
             _tipoUsuarioRepository = tipoUsuarioRepository;
         }
 
+        /// <summary>
+        /// Endpoint para listar tipos de usuarios.
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public IActionResult Get()
         {
@@ -31,6 +35,11 @@ namespace Eventplus_api_senai.Controllers
 
         }
 
+        /// <summary>
+        /// Endpoint para cadastrar novos tipos de usuarios.
+        /// </summary>
+        /// <param name="novoTipoUsuario"></param>
+        /// <returns></returns>
         [HttpPost]
         public IActionResult Post(TipoUsuario novoTipoUsuario)
         {
@@ -48,6 +57,11 @@ namespace Eventplus_api_senai.Controllers
 
         }
 
+        /// <summary>
+        /// Endpoint para buscar tipo usuarios pelo id.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpGet("BuscarPorId/{id}")]
         public IActionResult GetById(Guid id)
         {
@@ -64,6 +78,11 @@ namespace Eventplus_api_senai.Controllers
 
         }
 
+        /// <summary>
+        /// Endpoint para deletar tipos usuarios
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpDelete("{id}")]
         public IActionResult Delete(Guid id)
         {
@@ -80,6 +99,12 @@ namespace Eventplus_api_senai.Controllers
 
         }
 
+        /// <summary>
+        /// Endpoint para atualizar tipos usuarios
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="tipoUsuario"></param>
+        /// <returns></returns>
         [HttpPut("{id}")]
         public IActionResult Put(Guid id, TipoUsuario tipoUsuario)
         {

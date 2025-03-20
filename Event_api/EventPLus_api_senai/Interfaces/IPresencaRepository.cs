@@ -7,8 +7,8 @@ namespace Eventplus_api_senai.Interfaces
         List<Presenca> Listar();
         Presenca BuscarPorId(Guid id);
         void Atualizar(Guid id, Presenca presenca);
-        Presenca Inscrever(Presenca Inscricao);
-        List<Presenca> ListarMinhas();
+        void Inscrever(Presenca Inscricao);
+        List<Presenca> ListarMinhas(Guid id);
         void Deletar(Guid id);
     }
 }
