@@ -15,7 +15,7 @@ namespace Eventplus_api_senai.Context
 
         public DbSet<TipoUsuario> TipoUsuario { get; set; }
         public DbSet<Usuario> Usuario { get; set; }
-        public DbSet<Institucao> Instituicao { get; set; }
+        public DbSet<Instituicao> Instituicao { get; set; }
         public DbSet<TipoEvento> TipoEvento { get; set; }
         public DbSet<Evento> Evento { get; set; }
         public DbSet<Presenca> Presenca { get; set; }

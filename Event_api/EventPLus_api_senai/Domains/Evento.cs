@@ -17,7 +17,7 @@ namespace Eventplus_api_senai.Domais
         public Guid InstituicaoID { get; set; }
 
         [ForeignKey("InstituicaoID")]
-        public Institucao? Instituicao { get; set; }
+        public Instituicao? Instituicao { get; set; }
 
         public Presenca? Presenca { get; set; } //public PresencasEventos? PresencasEventos {get; set;}
 

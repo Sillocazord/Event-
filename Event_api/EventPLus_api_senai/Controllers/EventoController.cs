@@ -136,5 +136,21 @@ namespace Eventplus_api_senai.Controllers
                 throw;
             }
         }
+
+        [HttpGet("BuscarPorId/{id}")]
+        public IActionResult GetBy(Guid id)
+        {
+            try
+            {
+                Evento eventoBuscado = _eventoRepository.BuscarPorId(id);
+                return Ok(eventoBuscado);
+            }
+            catch (Exception e)
+            {
+
+                
+                return BadRequest(e.Message);
+            }
+        }
     }
 }

@@ -17,8 +17,26 @@ namespace Eventplus_api_senai.Repository
         {
             try
             {
-                Feedback feedbackBuscado = _context.Feedback.Find(UsuarioId)!;
-                return feedbackBuscado;
+                return _context.Feedback
+                     .Select(c => new Feedback
+                     {
+                         FeedbackID = c.FeedbackID,
+                         Descricao = c.Descricao,
+                         Exibir = c.Exibir,
+                         UsuarioID = c.UsuarioID,
+                         EventoID = c.EventoID,
+
+                         Usuario = new Usuario
+                         {
+                             Nome = c.Usuario!.Nome
+                         },
+
+                         Evento = new Evento
+                         {
+                             NomeEvento = c.Evento!.NomeEvento,
+                         }
+
+                     }).FirstOrDefault(c => c.UsuarioID == UsuarioId && c.EventoID == EventoId)!;
             }
             catch (Exception)
             {
@@ -45,12 +63,30 @@ namespace Eventplus_api_senai.Repository
             }
         }
 
-        public List<Feedback> Listar()
+        public List<Feedback> Listar(Guid id)
         {
             try
             {
-                List<Feedback> listaFeedback = _context.Feedback.ToList();
-                return listaFeedback;
+                return _context.Feedback
+                    .Select(c => new Feedback
+                    {
+                        FeedbackID = c.FeedbackID,
+                        Descricao = c.Descricao,
+                        Exibir = c.Exibir,
+                        UsuarioID = c.UsuarioID,
+                        EventoID = c.EventoID,
+
+                        Usuario = new Usuario
+                        {
+                            Nome = c.Usuario!.Nome
+                        },
+
+                        Evento = new Evento
+                        {
+                            NomeEvento = c.Evento!.NomeEvento,
+                        }
+
+                    }).Where(c => c.EventoID == id).ToList();
             }
             catch (Exception)
             {
@@ -63,7 +99,10 @@ namespace Eventplus_api_senai.Repository
         {
             try
             {
+                novoFeedback.FeedbackID = Guid.NewGuid();
+
                 _context.Feedback.Add(novoFeedback);
+
                 _context.SaveChanges();
             }
             catch (Exception)

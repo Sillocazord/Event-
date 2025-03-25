@@ -64,6 +64,22 @@
   },
   {
     "ContainingType": "Eventplus_api_senai.Controllers.EventoController",
+    "Method": "GetBy",
+    "RelativePath": "api/Evento/BuscarPorId/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Eventplus_api_senai.Controllers.EventoController",
     "Method": "GetById",
     "RelativePath": "api/Evento/ListarPorId/{id}",
     "HttpMethod": "GET",
@@ -416,6 +432,27 @@
       {
         "Name": "id",
         "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Eventplus_api_senai.Controllers.UsuarioController",
+    "Method": "Get",
+    "RelativePath": "api/Usuario/BuscarPorEmailESenha/{email},{senha}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "email",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "senha",
+        "Type": "System.String",
         "IsRequired": true
       }
     ],

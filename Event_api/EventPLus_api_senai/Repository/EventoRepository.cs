@@ -75,9 +75,26 @@ namespace Eventplus_api_senai.Repository
         {
             try
             {
-                List<Evento> listaEventos = _context.Evento.ToList();
-
-                return listaEventos;
+                return _context.Evento
+                    .Select(e => new Evento
+                    {
+                        EventoID = e.EventoID,
+                        NomeEvento = e.NomeEvento,
+                        Descricao = e.Descricao,
+                        DataEvento = e.DataEvento,
+                        TipoEventoID = e.TipoEventoID,
+                        TipoEvento = new TipoEvento
+                        {
+                            TipoEventoID = e.TipoEventoID,
+                            TituloTipoEvento = e.TipoEvento!.TituloTipoEvento
+                        },
+                        InstituicaoID = e.InstituicaoID,
+                        Instituicao = new Instituicao
+                        {
+                            InstituicaoID = e.InstituicaoID,
+                            NomeFantasia = e.Instituicao!.NomeFantasia
+                        }
+                    }).ToList();
             }
             catch (Exception)
             {
@@ -110,6 +127,32 @@ namespace Eventplus_api_senai.Repository
             catch (Exception)
             {
 
+                throw;
+            }
+        }
+        public Evento BuscarPorId(Guid id)
+        {
+            try
+            {
+                return _context.Evento
+                    .Select(e => new Evento
+                    {
+                        EventoID = e.EventoID,
+                        NomeEvento = e.NomeEvento,
+                        Descricao = e.Descricao,
+                        DataEvento = e.DataEvento,
+                        TipoEvento = new TipoEvento
+                        {
+                            TituloTipoEvento = e.TipoEvento!.TituloTipoEvento
+                        },
+                        Instituicao = new Instituicao
+                        {
+                            NomeFantasia = e.Instituicao!.NomeFantasia
+                        }
+                    }).FirstOrDefault(e => e.EventoID == id)!;
+            }
+            catch (Exception)
+            {
                 throw;
             }
         }

@@ -35,8 +35,27 @@ namespace Eventplus_api_senai.Repository
         {
             try
             {
-                Presenca presencaBuscada = _context.Presenca.Find(id)!;
-                return presencaBuscada;
+                return _context.Presenca
+                   .Select(p => new Presenca
+                   {
+                       PresencaID = p.PresencaID,
+                       Situacao = p.Situacao,
+
+                       Evento = new Evento
+                       {
+                           EventoID = p.EventoID!,
+                           DataEvento = p.Evento!.DataEvento,
+                           NomeEvento = p.Evento.NomeEvento,
+                           Descricao = p.Evento.Descricao,
+
+                           Instituicao = new Instituicao
+                           {
+                               InstituicaoID = p.Evento.Instituicao!.InstituicaoID,
+                               NomeFantasia = p.Evento.Instituicao!.NomeFantasia
+                           }
+                       }
+
+                   }).FirstOrDefault(p => p.PresencaID == id)!;
             }
             catch (Exception)
             {
@@ -67,7 +86,10 @@ namespace Eventplus_api_senai.Repository
         {
             try
             {
+                Inscricao.PresencaID = Guid.NewGuid();
+
                 _context.Presenca.Add(Inscricao);
+
                 _context.SaveChanges();
             }
             catch (Exception)

@@ -6,7 +6,7 @@ namespace Eventplus_api_senai.Interfaces
     {
         void Cadastrar(Feedback novoFeedback);
         void Deletar (Guid id);
-        List<Feedback> Listar();
+        List<Feedback> Listar(Guid id);
 
         Feedback BuscarPorIdUsuario(Guid UsuarioId, Guid EventoId);
     }

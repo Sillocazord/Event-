@@ -60,5 +60,19 @@ namespace Eventplus_api_senai.Controllers
                 return BadRequest(error.Message);
             }
         }
+        [HttpGet("BuscarPorEmailESenha/{email},{senha}")]
+        public IActionResult Get(string email, string senha) 
+        {
+            try
+            {
+                Usuario novoUsuario = _usuarioRepository.BuscarPorEmailESenha(email, senha);
+                return Ok(novoUsuario);
+            }
+            catch (Exception e)
+            {
+
+                return BadRequest(e.Message);
+            }
+        }
     }
 }

@@ -10,5 +10,6 @@ namespace Eventplus_api_senai.Interfaces
         void Atualizar(Guid id,Evento evento);
         List<Evento> ListarProximosEventos(Guid id);
         List<Evento> ListarPorId(Guid id);
+        Evento BuscarPorId(Guid id);
     }
 }

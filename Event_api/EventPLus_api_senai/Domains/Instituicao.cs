@@ -6,7 +6,7 @@ namespace Eventplus_api_senai.Domais
 {
     [Table("Instituicao")]
     [Index(nameof(CNPJ), IsUnique =true)]
-    public class Institucao
+    public class Instituicao
     {
         [Key]
         public Guid InstituicaoID { get; set; }
