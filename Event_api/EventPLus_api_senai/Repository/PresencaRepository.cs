@@ -103,8 +103,27 @@ namespace Eventplus_api_senai.Repository
         {
             try
             {
-                List<Presenca> listaPresenca = _context.Presenca.ToList();
-                return listaPresenca;
+                return _context.Presenca
+                     .Select(p => new Presenca
+                     {
+                         PresencaID = p.PresencaID,
+                         Situacao = p.Situacao,
+
+                         Evento = new Evento
+                         {
+                             EventoID = p.EventoID,
+                             DataEvento = p.Evento!.DataEvento,
+                             NomeEvento = p.Evento.NomeEvento,
+                             Descricao = p.Evento.Descricao,
+
+                             Instituicao = new Instituicao
+                             {
+                                 InstituicaoID = p.Evento.Instituicao!.InstituicaoID,
+                                 NomeFantasia = p.Evento.Instituicao!.NomeFantasia
+                             }
+                         }
+
+                     }).ToList();
             }
             catch (Exception)
             {
@@ -117,8 +136,29 @@ namespace Eventplus_api_senai.Repository
         {
             try
             {
-                List<Presenca> listaPresenca = _context.Presenca.Where(p => p.UsuarioID == id).ToList();
-                return listaPresenca;
+                return _context.Presenca
+                .Select(p => new Presenca
+                {
+                    PresencaID = p.PresencaID,
+                    Situacao = p.Situacao,
+                    UsuarioID = p.UsuarioID,
+                    EventoID = p.EventoID,
+
+                    Evento = new Evento
+                    {
+                        EventoID = p.EventoID,
+                        DataEvento = p.Evento!.DataEvento,
+                        NomeEvento = p.Evento!.NomeEvento,
+                        Descricao = p.Evento!.Descricao,
+
+                        Instituicao = new Instituicao
+                        {
+                            InstituicaoID = p.Evento!.InstituicaoID,
+                        }
+                    }
+                })
+                .Where(p => p.UsuarioID == id)
+                .ToList();
             }
             catch (Exception)
             {

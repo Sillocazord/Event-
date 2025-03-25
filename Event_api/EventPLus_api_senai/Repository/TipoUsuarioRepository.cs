@@ -16,7 +16,8 @@ namespace Eventplus_api_senai.Repository
         public void Cadastro(TipoUsuario novoTipoUsuario)
         {
             try
-            {
+            {   
+                novoTipoUsuario.TipoUsuarioID = Guid.NewGuid();
                 _context.TipoUsuario.Add(novoTipoUsuario);
                 _context.SaveChanges();
             }
@@ -31,8 +32,7 @@ namespace Eventplus_api_senai.Repository
         {
             try
             {
-                List<TipoUsuario> ListaTipoUsuario = _context.TipoUsuario.ToList();
-                return ListaTipoUsuario;
+               return _context.TipoUsuario.ToList();
             }
             catch (Exception)
             {
@@ -67,6 +67,7 @@ namespace Eventplus_api_senai.Repository
                     novoTipoUsuario.TituloTipoUsuario = tipoUsuario.TituloTipoUsuario;
                 
                 }
+                _context.TipoUsuario.Update(tipoUsuario!);
                 _context.SaveChanges();
             }
             catch (Exception)
@@ -80,8 +81,7 @@ namespace Eventplus_api_senai.Repository
         {
             try
             {
-                TipoUsuario novoTipoUsuario = _context.TipoUsuario.Find(id)!;
-                return novoTipoUsuario;
+                return _context.TipoUsuario.Find(id)!;
             }
             catch (Exception)
             {

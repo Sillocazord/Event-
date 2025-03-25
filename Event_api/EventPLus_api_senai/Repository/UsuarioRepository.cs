@@ -1,4 +1,5 @@
-﻿using Eventplus_api_senai.Context;
+﻿using api_filmes_senai.Utils;
+using Eventplus_api_senai.Context;
 using Eventplus_api_senai.Domais;
 using Eventplus_api_senai.Interfaces;
 
@@ -16,10 +17,29 @@ namespace Eventplus_api_senai.Repository
         {
             try
             {
-                Usuario usuarioBuscado = _context.Usuario.FirstOrDefault(u => u.Email == email)!;
+                Usuario usuarioBuscado = _context.Usuario
+                    .Select(u => new Usuario
+                    {
+                        UsuarioID = u.UsuarioID,
+                        Nome = u.Nome,
+                        Email = u.Email,
+                        Senha = u.Senha,
+
+                        TipoUsuario = new TipoUsuario
+                        {
+                            TipoUsuarioID = u.TipoUsuarioID,
+                            TituloTipoUsuario = u.TipoUsuario!.TituloTipoUsuario
+                        }
+                    }).FirstOrDefault(u => u.Email == email)!;
+
                 if (usuarioBuscado != null)
                 {
-                    return usuarioBuscado;
+                    bool confere = Criptografia.CompararHash(senha, usuarioBuscado.Senha!);
+
+                    if (confere)
+                    {
+                        return usuarioBuscado!;
+                    }
                 }
                 return null!;
             }
@@ -34,10 +54,26 @@ namespace Eventplus_api_senai.Repository
         {
             try
             {
-                Usuario usuarioBuscado = _context.Usuario.Find(id)!;
-                if(usuarioBuscado != null) 
+                Usuario usuarioBuscado = _context.Usuario
+                    .Select(u => new Usuario
+                    {
+                        UsuarioID = u.UsuarioID,
+                        Nome = u.Nome,
+                        Email = u.Email,
+                        Senha = u.Senha,
+
+                        TipoUsuario = new TipoUsuario
+                        {
+                            TipoUsuarioID = u.TipoUsuario!.TipoUsuarioID,
+                            TituloTipoUsuario = u.TipoUsuario!.TituloTipoUsuario
+                        }
+
+                    }).FirstOrDefault(u => u.UsuarioID == id)!;
+
+                if (usuarioBuscado != null)
                 {
                     return usuarioBuscado;
+
                 }
                 return null!;
             }
@@ -52,6 +88,8 @@ namespace Eventplus_api_senai.Repository
         {
             try
             {
+                novoUsuario.UsuarioID = Guid.NewGuid();
+                novoUsuario.Senha = Criptografia.GerarHash(novoUsuario.Senha!);
                 _context.Usuario.Add(novoUsuario);
                 _context.SaveChanges();
             }

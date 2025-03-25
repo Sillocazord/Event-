@@ -22,6 +22,7 @@ namespace Eventplus_api_senai.Repository
 
                     novotipoEvento.TituloTipoEvento = tipoEvento.TituloTipoEvento;
                 }
+                _context.TipoEvento.Update(novotipoEvento!);
                 _context.SaveChanges();
             }
             catch (Exception)
@@ -35,8 +36,7 @@ namespace Eventplus_api_senai.Repository
         {
             try
             {
-                TipoEvento novotipoEvento = _context.TipoEvento.Find(id)!;
-                return novotipoEvento;
+                return _context.TipoEvento.Find(id)!;
             }
             catch (Exception)
             {
@@ -48,7 +48,8 @@ namespace Eventplus_api_senai.Repository
         public void Cadastro(TipoEvento novoTipoEvento)
         {
             try
-            {
+            {   
+                novoTipoEvento.TipoEventoID = Guid.NewGuid();
                 _context.TipoEvento.Add(novoTipoEvento);
                 _context.SaveChanges();
             }
@@ -82,8 +83,7 @@ namespace Eventplus_api_senai.Repository
 
             try
             {
-                List<TipoEvento> ListaTipoEvento = _context.TipoEvento.ToList();
-                return ListaTipoEvento;
+                return _context.TipoEvento.OrderBy(tp => tp.TituloTipoEvento).ToList();
             }
             catch (Exception)
             {
