@@ -17,7 +17,7 @@ namespace Eventplus_api_senai.Repository
         {
             try
             {
-                Feedback feedbackBuscado = _context.Feedback.Find(UsuarioId, EventoId)!;
+                Feedback feedbackBuscado = _context.Feedback.Find(UsuarioId)!;
                 return feedbackBuscado;
             }
             catch (Exception)

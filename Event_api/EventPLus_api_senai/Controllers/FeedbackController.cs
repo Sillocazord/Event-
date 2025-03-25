@@ -85,7 +85,7 @@ namespace Eventplus_api_senai.Controllers
         /// <param name="UsuarioId"></param>
         /// <param name="EventoId"></param>
         /// <returns></returns>
-        [HttpGet("BuscarPorIdUsuario/{UsuarioId},{EventoId}")]
+        [HttpGet("BuscarPorIdUsuario/{UsuarioId}")]
         public IActionResult GetById(Guid UsuarioId, Guid EventoId)
         {
             try

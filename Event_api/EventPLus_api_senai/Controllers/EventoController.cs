@@ -40,11 +40,11 @@ namespace Eventplus_api_senai.Controllers
         /// <param name="novoEvento"></param>
         /// <returns></returns>
         [HttpPost]
-        public IActionResult Post(Evento novoEvento)
+        public IActionResult Post(Evento evento)
         {
             try
             {
-                _eventoRepository.Cadastrar(novoEvento);
+                _eventoRepository.Cadastrar(evento);
                 return Created();
             }
             catch (Exception e)

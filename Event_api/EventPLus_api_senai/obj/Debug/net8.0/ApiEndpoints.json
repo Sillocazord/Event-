@@ -18,7 +18,7 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "novoEvento",
+        "Name": "evento",
         "Type": "Eventplus_api_senai.Domais.Evento",
         "IsRequired": true
       }
@@ -139,7 +139,7 @@
   {
     "ContainingType": "Eventplus_api_senai.Controllers.FeedbackController",
     "Method": "GetById",
-    "RelativePath": "api/Feedback/BuscarPorIdUsuario/{UsuarioId},{EventoId}",
+    "RelativePath": "api/Feedback/BuscarPorIdUsuario/{UsuarioId}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -152,7 +152,7 @@
       {
         "Name": "EventoId",
         "Type": "System.Guid",
-        "IsRequired": true
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []

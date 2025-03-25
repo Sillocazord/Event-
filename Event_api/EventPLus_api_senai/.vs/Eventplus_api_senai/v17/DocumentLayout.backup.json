@@ -3,12 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\59963156886\\Desktop\\Event-\\Event_api\\EventPLus_api_senai\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{DD32C96B-2880-4707-B554-B024B78DDD8C}|Eventplus_api_senai.csproj|c:\\users\\59963156886\\desktop\\event-\\event_api\\eventplus_api_senai\\controllers\\tipousuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DD32C96B-2880-4707-B554-B024B78DDD8C}|Eventplus_api_senai.csproj|solutionrelative:controllers\\tipousuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DD32C96B-2880-4707-B554-B024B78DDD8C}|Eventplus_api_senai.csproj|c:\\users\\59963156886\\desktop\\event-\\event_api\\eventplus_api_senai\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DD32C96B-2880-4707-B554-B024B78DDD8C}|Eventplus_api_senai.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DD32C96B-2880-4707-B554-B024B78DDD8C}|Eventplus_api_senai.csproj|c:\\users\\59963156886\\desktop\\event-\\event_api\\eventplus_api_senai\\repository\\eventorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DD32C96B-2880-4707-B554-B024B78DDD8C}|Eventplus_api_senai.csproj|solutionrelative:repository\\eventorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -23,28 +19,31 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "TipoUsuarioController.cs",
-              "DocumentMoniker": "C:\\Users\\59963156886\\Desktop\\Event-\\Event_api\\EventPLus_api_senai\\Controllers\\TipoUsuarioController.cs",
-              "RelativeDocumentMoniker": "Controllers\\TipoUsuarioController.cs",
-              "ToolTip": "C:\\Users\\59963156886\\Desktop\\Event-\\Event_api\\EventPLus_api_senai\\Controllers\\TipoUsuarioController.cs",
-              "RelativeToolTip": "Controllers\\TipoUsuarioController.cs",
-              "ViewState": "AgIAAFcAAAAAAAAAAAAowAAAAAAAAAAAAAAAAA==",
+              "Title": "EventoRepository.cs",
+              "DocumentMoniker": "C:\\Users\\59963156886\\Desktop\\Event-\\Event_api\\EventPLus_api_senai\\Repository\\EventoRepository.cs",
+              "RelativeDocumentMoniker": "Repository\\EventoRepository.cs",
+              "ToolTip": "C:\\Users\\59963156886\\Desktop\\Event-\\Event_api\\EventPLus_api_senai\\Repository\\EventoRepository.cs",
+              "RelativeToolTip": "Repository\\EventoRepository.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAYwCwAAAA1AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-20T19:20:25.443Z",
+              "WhenOpened": "2025-03-25T17:21:00.527Z",
               "EditorCaption": ""
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\59963156886\\Desktop\\Event-\\Event_api\\EventPLus_api_senai\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\59963156886\\Desktop\\Event-\\Event_api\\EventPLus_api_senai\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-20T18:54:28.046Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
             }
           ]
         }

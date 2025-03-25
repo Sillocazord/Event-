@@ -20,7 +20,11 @@ namespace Eventplus_api_senai.Repository
                 if (eventoBuscado != null) 
                 {
                     eventoBuscado.NomeEvento = evento.NomeEvento;
+                    eventoBuscado.DataEvento = evento.DataEvento;
+                    eventoBuscado.Descricao = evento.Descricao;
+                    eventoBuscado.TipoEventoID = evento.TipoEventoID;
                 }
+                _context.Evento.Update(eventoBuscado!);
                 _context.SaveChanges();
             }
             catch (Exception)
@@ -34,6 +38,11 @@ namespace Eventplus_api_senai.Repository
         {
             try
             {
+                if (novoEvento.DataEvento < DateTime.Now) 
+                {
+                    throw new ArgumentException("A data do evento deve ser maior ou igual a data atual.");
+                }
+                novoEvento.EventoID = Guid.NewGuid();
                 _context.Evento.Add(novoEvento);
                 _context.SaveChanges();
             }
