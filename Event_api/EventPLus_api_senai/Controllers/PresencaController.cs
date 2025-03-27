@@ -39,13 +39,13 @@ namespace Eventplus_api_senai.Controllers
         /// </summary>
         /// <param name="novaPresenca"></param>
         /// <returns></returns>
-        [HttpPost]
+        [HttpPost] //Copiar o metodo post do professor.
         public IActionResult Post(Presenca novaPresenca)
         {
             try
             {
                 _presencaRepository.Inscrever(novaPresenca);
-                return Created();
+                return StatusCode(201);
             }
             catch (Exception e)
             {
@@ -60,13 +60,12 @@ namespace Eventplus_api_senai.Controllers
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        [HttpGet("BucarPorId/{id}")]
+        [HttpGet("BuscarPorId/{id}")]
         public IActionResult GetById(Guid id)
         {
             try
             {
-                Presenca presencaBuscada = _presencaRepository.BuscarPorId(id);
-                return Ok(presencaBuscada);
+                return Ok(_presencaRepository.BuscarPorId(id));
             }
             catch (Exception)
             {
@@ -76,25 +75,19 @@ namespace Eventplus_api_senai.Controllers
 
         }
 
-        /// <summary>
-        /// Endpoint para deletar presenças
-        /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
-        [HttpDelete("{id}")]
-        public IActionResult Delete(Guid id)
+        [HttpPut("{id}")]
+        public IActionResult Put(Guid id, Presenca presenca)
         {
             try
             {
-                _presencaRepository.Deletar(id);
+                _presencaRepository.Atualizar(id, presenca);
                 return NoContent();
             }
-            catch (Exception)
+            catch (Exception e)
             {
 
-                throw;
+                return BadRequest(e.Message);
             }
-
         }
 
         /// <summary>
@@ -103,12 +96,11 @@ namespace Eventplus_api_senai.Controllers
         /// <param name="id"></param>
         /// <returns></returns>
         [HttpGet("ListarMinhasPresencas/{id}")]
-        public IActionResult Get(Guid id)
+        public IActionResult GetByMe(Guid id)
         {
             try
             {
-                List<Presenca> listarMinhasPresencas = _presencaRepository.ListarMinhas(id);
-                return Ok(listarMinhasPresencas);
+                return Ok(_presencaRepository.ListarMinhas(id));
             }
             catch (Exception error)
             {

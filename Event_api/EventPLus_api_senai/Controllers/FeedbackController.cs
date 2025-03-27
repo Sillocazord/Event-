@@ -1,4 +1,5 @@
-﻿using Eventplus_api_senai.Domais;
+﻿using Eventplus_api_senai.Context;
+using Eventplus_api_senai.Domais;
 using Eventplus_api_senai.Interfaces;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -44,11 +45,11 @@ namespace Eventplus_api_senai.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet]
-        public IActionResult Get() 
+        public IActionResult Get(Guid id) 
         {
             try
             {
-                return Ok(_feedbackRepository.Listar());
+                return Ok(_feedbackRepository.Listar(id));
 
             }
             catch (Exception e)

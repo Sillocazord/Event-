@@ -4,14 +4,25 @@ using Eventplus_api_senai.Interfaces;
 
 namespace Eventplus_api_senai.Repository
 {
+    /// <summary>
+    /// Repositório para gerenciamento dos eventos
+    /// </summary>
     public class EventoRepository : IEventoRepository
     {
         private readonly Event_Context _context;
+
+        /// <summary>
+        /// Repositório para gerenciamento dos eventos
+        /// </summary>
         public EventoRepository(Event_Context context)
         {
                 _context = context;
         }
 
+
+        /// <summary>
+        /// Repositório para gerenciamento dos eventos
+        /// </summary>
         public void Atualizar(Guid id, Evento evento)
         {
             try
@@ -34,6 +45,10 @@ namespace Eventplus_api_senai.Repository
             }
         }
 
+
+        /// <summary>
+        /// Repositório para gerenciamento dos eventos
+        /// </summary>
         public void Cadastrar(Evento novoEvento)
         {
             try
@@ -53,6 +68,10 @@ namespace Eventplus_api_senai.Repository
             }
         }
 
+
+        /// <summary>
+        /// Repositório para gerenciamento dos eventos
+        /// </summary>
         public void Deletar(Guid id)
         {
             try
@@ -71,6 +90,10 @@ namespace Eventplus_api_senai.Repository
             }
         }
 
+
+        /// <summary>
+        /// Repositório para gerenciamento dos eventos
+        /// </summary>
         public List<Evento> Listar()
         {
             try
@@ -103,6 +126,10 @@ namespace Eventplus_api_senai.Repository
             }
         }
 
+
+        /// <summary>
+        /// Repositório para gerenciamento dos eventos
+        /// </summary>
         public List<Evento> ListarPorId(Guid id)
         {
             try
@@ -117,6 +144,9 @@ namespace Eventplus_api_senai.Repository
             }
         }
 
+        /// <summary>
+        /// Repositório para gerenciamento dos eventos
+        /// </summary>
         public List<Evento> ListarProximosEventos(Guid id)
         {
             try
@@ -130,6 +160,10 @@ namespace Eventplus_api_senai.Repository
                 throw;
             }
         }
+
+        /// <summary>
+        /// Repositório para gerenciamento dos eventos
+        /// </summary>
         public Evento BuscarPorId(Guid id)
         {
             try

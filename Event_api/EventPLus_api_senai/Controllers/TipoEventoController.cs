@@ -47,7 +47,7 @@ namespace Eventplus_api_senai.Controllers
             try
             {
                 _tipoeventoRepository.Cadastro(novoTipoEvento);
-                return Created();
+                return StatusCode(201, novoTipoEvento);
             }
             catch (Exception e)
             {
@@ -67,8 +67,7 @@ namespace Eventplus_api_senai.Controllers
         {
             try
             {
-                TipoEvento tipoBuscado = _tipoeventoRepository.BuscarPorId(id);
-                return Ok(tipoBuscado);
+                return Ok(_tipoeventoRepository.BuscarPorId(id));
             }
             catch (Exception)
             {
@@ -91,10 +90,10 @@ namespace Eventplus_api_senai.Controllers
                 _tipoeventoRepository.Deletar(id);
                 return NoContent();
             }
-            catch (Exception)
+            catch (Exception e)
             {
 
-                throw;
+                return BadRequest(e.Message);
             }
         
         
@@ -107,7 +106,7 @@ namespace Eventplus_api_senai.Controllers
             try
             {
                 _tipoeventoRepository.Atualizar(id, tipoEvento);
-                return NoContent();
+                return StatusCode(204, tipoEvento);
             }
             catch (Exception e)
             {

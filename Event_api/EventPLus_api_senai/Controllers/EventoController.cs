@@ -80,7 +80,7 @@ namespace Eventplus_api_senai.Controllers
         /// <param name="id"></param>
         /// <param name="novoEvento"></param>
         /// <returns></returns>
-        [HttpPut]
+        [HttpPut("{id}")]
         public IActionResult Put(Guid id, Evento novoEvento)
         {
             try

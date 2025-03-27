@@ -1,0 +1,1078 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "API de Eventos",
+    "description": "Aplicação para gerenciamento de eventos e Usuarios",
+    "termsOfService": "https://example.com/terms",
+    "contact": {
+      "name": "Sillas Endrigo",
+      "url": "https://github.com/Sillocazord"
+    },
+    "license": {
+      "name": "Example License",
+      "url": "https://example.com/license"
+    },
+    "version": "v1"
+  },
+  "paths": {
+    "/api/Evento": {
+      "get": {
+        "tags": [
+          "Evento"
+        ],
+        "summary": "Endpoint para listar Eventos",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Evento"
+        ],
+        "summary": "Endpoint para cadastras Eventos",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Evento"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Evento"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Evento"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Evento/{id}": {
+      "delete": {
+        "tags": [
+          "Evento"
+        ],
+        "summary": "Endpoint para Deletar Eventos",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Evento"
+        ],
+        "summary": "Endpoint para Atualizar Eventos",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Evento"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Evento"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Evento"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Evento/ListarProximosEventos/{id}": {
+      "get": {
+        "tags": [
+          "Evento"
+        ],
+        "summary": "Endpoint para Listar Proximos Eventos",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Evento/ListarPorId/{id}": {
+      "get": {
+        "tags": [
+          "Evento"
+        ],
+        "summary": "Endpoint para Listar Eventos por Id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Evento/BuscarPorId/{id}": {
+      "get": {
+        "tags": [
+          "Evento"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Feedback": {
+      "post": {
+        "tags": [
+          "Feedback"
+        ],
+        "summary": "Endpoint para cadastrar Feedbackss",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Feedback"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Feedback"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Feedback"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Feedback"
+        ],
+        "summary": "Endpoint para listar Feedbacks",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Feedback/{id}": {
+      "delete": {
+        "tags": [
+          "Feedback"
+        ],
+        "summary": "Endpoint para deletar Feedbacks",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Feedback/BuscarPorIdUsuario/{UsuarioId}": {
+      "get": {
+        "tags": [
+          "Feedback"
+        ],
+        "summary": "Endpoint para buscar Feedbacks por Id dos usuarios",
+        "parameters": [
+          {
+            "name": "UsuarioId",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "EventoId",
+            "in": "query",
+            "description": "",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Login": {
+      "post": {
+        "tags": [
+          "Login"
+        ],
+        "summary": "Endpoint para Fazer Login.",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginDTO"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginDTO"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Presenca": {
+      "get": {
+        "tags": [
+          "Presenca"
+        ],
+        "summary": "Endpoint para Listar Presenças",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Presenca"
+        ],
+        "summary": "Endpoint para Inscrever(Cadastrar presença)",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Presenca"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Presenca"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Presenca"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Presenca/BuscarPorId/{id}": {
+      "get": {
+        "tags": [
+          "Presenca"
+        ],
+        "summary": "Endpoint para buscar por id as presenças",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Presenca/{id}": {
+      "put": {
+        "tags": [
+          "Presenca"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Presenca"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Presenca"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Presenca"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Presenca/ListarMinhasPresencas/{id}": {
+      "get": {
+        "tags": [
+          "Presenca"
+        ],
+        "summary": "Endpoint para listar suas presenças",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/TipoEvento": {
+      "get": {
+        "tags": [
+          "TipoEvento"
+        ],
+        "summary": "Endpoint para listar tipos de eventos",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "TipoEvento"
+        ],
+        "summary": "Endpoint para cadastras novos tipos de eventos",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TipoEvento"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TipoEvento"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/TipoEvento"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/TipoEvento/BuscarPorId/{id}": {
+      "get": {
+        "tags": [
+          "TipoEvento"
+        ],
+        "summary": "Endpoint para buscar tipos de eventos por id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/TipoEvento/{id}": {
+      "delete": {
+        "tags": [
+          "TipoEvento"
+        ],
+        "summary": "Endpoint para deletar tipos de eventos",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "TipoEvento"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TipoEvento"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TipoEvento"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/TipoEvento"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/TipoUsuario": {
+      "get": {
+        "tags": [
+          "TipoUsuario"
+        ],
+        "summary": "Endpoint para listar tipos de usuarios.",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "TipoUsuario"
+        ],
+        "summary": "Endpoint para cadastrar novos tipos de usuarios.",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TipoUsuario"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TipoUsuario"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/TipoUsuario"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/TipoUsuario/BuscarPorId/{id}": {
+      "get": {
+        "tags": [
+          "TipoUsuario"
+        ],
+        "summary": "Endpoint para buscar tipo usuarios pelo id.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/TipoUsuario/{id}": {
+      "delete": {
+        "tags": [
+          "TipoUsuario"
+        ],
+        "summary": "Endpoint para deletar tipos usuarios",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "TipoUsuario"
+        ],
+        "summary": "Endpoint para atualizar tipos usuarios",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TipoUsuario"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TipoUsuario"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/TipoUsuario"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Usuario/{id}": {
+      "get": {
+        "tags": [
+          "Usuario"
+        ],
+        "summary": "Endpoint para listar usuario por id.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Usuario": {
+      "post": {
+        "tags": [
+          "Usuario"
+        ],
+        "summary": "Endpoint para cadastrar usuario.",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Usuario"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Usuario"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Usuario"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Usuario/BuscarPorEmailESenha/{email},{senha}": {
+      "get": {
+        "tags": [
+          "Usuario"
+        ],
+        "parameters": [
+          {
+            "name": "email",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "senha",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Evento": {
+        "required": [
+          "dataEvento",
+          "descricao",
+          "nomeEvento"
+        ],
+        "type": "object",
+        "properties": {
+          "eventoID": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "tipoEventoID": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "tipoEvento": {
+            "$ref": "#/components/schemas/TipoEvento"
+          },
+          "instituicaoID": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "instituicao": {
+            "$ref": "#/components/schemas/Instituicao"
+          },
+          "presenca": {
+            "$ref": "#/components/schemas/Presenca"
+          },
+          "nomeEvento": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "dataEvento": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "descricao": {
+            "minLength": 1,
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Feedback": {
+        "type": "object",
+        "properties": {
+          "feedbackID": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "eventoID": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "evento": {
+            "$ref": "#/components/schemas/Evento"
+          },
+          "usuarioID": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "usuario": {
+            "$ref": "#/components/schemas/Usuario"
+          },
+          "descricao": {
+            "type": "string",
+            "nullable": true
+          },
+          "exibir": {
+            "type": "boolean",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Instituicao": {
+        "required": [
+          "cnpj",
+          "endereço",
+          "nomeFantasia"
+        ],
+        "type": "object",
+        "properties": {
+          "instituicaoID": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "nomeFantasia": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "endereço": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "cnpj": {
+            "maxLength": 14,
+            "minLength": 0,
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "LoginDTO": {
+        "required": [
+          "email",
+          "senha"
+        ],
+        "type": "object",
+        "properties": {
+          "email": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "senha": {
+            "minLength": 1,
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Presenca": {
+        "type": "object",
+        "properties": {
+          "presencaID": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "eventoID": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "evento": {
+            "$ref": "#/components/schemas/Evento"
+          },
+          "usuarioID": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "usuario": {
+            "$ref": "#/components/schemas/Usuario"
+          },
+          "situacao": {
+            "type": "boolean",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "TipoEvento": {
+        "required": [
+          "tituloTipoEvento"
+        ],
+        "type": "object",
+        "properties": {
+          "tipoEventoID": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "tituloTipoEvento": {
+            "minLength": 1,
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "TipoUsuario": {
+        "type": "object",
+        "properties": {
+          "tipoUsuarioID": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "tituloTipoUsuario": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Usuario": {
+        "required": [
+          "email",
+          "nome",
+          "senha",
+          "tipoUsuarioID"
+        ],
+        "type": "object",
+        "properties": {
+          "usuarioID": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "tipoUsuarioID": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "tipoUsuario": {
+            "$ref": "#/components/schemas/TipoUsuario"
+          },
+          "nome": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "email": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "senha": {
+            "maxLength": 60,
+            "minLength": 6,
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "securitySchemes": {
+      "Bearer": {
+        "type": "apiKey",
+        "description": "Value: Bearer TokenJWT ",
+        "name": "Authorization",
+        "in": "header"
+      }
+    }
+  },
+  "security": [
+    {
+      "Bearer": [ ]
+    }
+  ]
+}

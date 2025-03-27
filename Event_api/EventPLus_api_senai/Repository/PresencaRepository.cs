@@ -82,14 +82,12 @@ namespace Eventplus_api_senai.Repository
             }
         }
 
-        public void Inscrever(Presenca Inscricao)
+        public void Inscrever(Presenca inscricao)
         {
             try
             {
-                Inscricao.PresencaID = Guid.NewGuid();
-
-                _context.Presenca.Add(Inscricao);
-
+                inscricao.PresencaID = Guid.NewGuid();
+                _context.Presenca.Add(inscricao);
                 _context.SaveChanges();
             }
             catch (Exception)

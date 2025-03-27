@@ -27,27 +27,6 @@
   },
   {
     "ContainingType": "Eventplus_api_senai.Controllers.EventoController",
-    "Method": "Put",
-    "RelativePath": "api/Evento",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Guid",
-        "IsRequired": false
-      },
-      {
-        "Name": "novoEvento",
-        "Type": "Eventplus_api_senai.Domais.Evento",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Eventplus_api_senai.Controllers.EventoController",
     "Method": "Delete",
     "RelativePath": "api/Evento/{id}",
     "HttpMethod": "DELETE",
@@ -57,6 +36,27 @@
       {
         "Name": "id",
         "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Eventplus_api_senai.Controllers.EventoController",
+    "Method": "Put",
+    "RelativePath": "api/Evento/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "novoEvento",
+        "Type": "Eventplus_api_senai.Domais.Evento",
         "IsRequired": true
       }
     ],
@@ -133,7 +133,13 @@
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
-    "Parameters": [],
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": false
+      }
+    ],
     "ReturnTypes": []
   },
   {
@@ -174,6 +180,22 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "Eventplus_api_senai.Controllers.LoginController",
+    "Method": "Login",
+    "RelativePath": "api/Login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "loginDTO",
+        "Type": "Eventplus_api_senai.DTO.LoginDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Eventplus_api_senai.Controllers.PresencaController",
     "Method": "Get",
     "RelativePath": "api/Presenca",
@@ -201,15 +223,20 @@
   },
   {
     "ContainingType": "Eventplus_api_senai.Controllers.PresencaController",
-    "Method": "Delete",
+    "Method": "Put",
     "RelativePath": "api/Presenca/{id}",
-    "HttpMethod": "DELETE",
+    "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
         "Name": "id",
         "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "presenca",
+        "Type": "Eventplus_api_senai.Domais.Presenca",
         "IsRequired": true
       }
     ],
@@ -218,7 +245,7 @@
   {
     "ContainingType": "Eventplus_api_senai.Controllers.PresencaController",
     "Method": "GetById",
-    "RelativePath": "api/Presenca/BucarPorId/{id}",
+    "RelativePath": "api/Presenca/BuscarPorId/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -233,7 +260,7 @@
   },
   {
     "ContainingType": "Eventplus_api_senai.Controllers.PresencaController",
-    "Method": "Get",
+    "Method": "GetByMe",
     "RelativePath": "api/Presenca/ListarMinhasPresencas/{id}",
     "HttpMethod": "GET",
     "IsController": true,

@@ -1,0 +1,245 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Eventplus_api_senai</name>
+    </assembly>
+    <members>
+        <member name="M:Eventplus_api_senai.Controllers.EventoController.Get">
+            <summary>
+            Endpoint para listar Eventos
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Eventplus_api_senai.Controllers.EventoController.Post(Eventplus_api_senai.Domais.Evento)">
+            <summary>
+            Endpoint para cadastras Eventos
+            </summary>
+            <param name="novoEvento"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Eventplus_api_senai.Controllers.EventoController.Delete(System.Guid)">
+            <summary>
+            Endpoint para Deletar Eventos
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Eventplus_api_senai.Controllers.EventoController.Put(System.Guid,Eventplus_api_senai.Domais.Evento)">
+            <summary>
+            Endpoint para Atualizar Eventos
+            </summary>
+            <param name="id"></param>
+            <param name="novoEvento"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Eventplus_api_senai.Controllers.EventoController.Get(System.Guid)">
+            <summary>
+            Endpoint para Listar Proximos Eventos
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Eventplus_api_senai.Controllers.EventoController.GetById(System.Guid)">
+            <summary>
+            Endpoint para Listar Eventos por Id
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Eventplus_api_senai.Controllers.FeedbackController.Post(Eventplus_api_senai.Domais.Feedback)">
+            <summary>
+            Endpoint para cadastrar Feedbackss
+            </summary>
+            <param name="novoFeedback"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Eventplus_api_senai.Controllers.FeedbackController.Get(System.Guid)">
+            <summary>
+            Endpoint para listar Feedbacks
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Eventplus_api_senai.Controllers.FeedbackController.Delete(System.Guid)">
+            <summary>
+            Endpoint para deletar Feedbacks
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Eventplus_api_senai.Controllers.FeedbackController.GetById(System.Guid,System.Guid)">
+            <summary>
+            Endpoint para buscar Feedbacks por Id dos usuarios
+            </summary>
+            <param name="UsuarioId"></param>
+            <param name="EventoId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Eventplus_api_senai.Controllers.LoginController.Login(Eventplus_api_senai.DTO.LoginDTO)">
+            <summary>
+            Endpoint para Fazer Login.
+            </summary>
+            <param name="loginDTO"></param>
+            <returns>Login</returns>
+        </member>
+        <member name="M:Eventplus_api_senai.Controllers.PresencaController.Get">
+            <summary>
+            Endpoint para Listar Presenças
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Eventplus_api_senai.Controllers.PresencaController.Post(Eventplus_api_senai.Domais.Presenca)">
+            <summary>
+            Endpoint para Inscrever(Cadastrar presença)
+            </summary>
+            <param name="novaPresenca"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Eventplus_api_senai.Controllers.PresencaController.GetById(System.Guid)">
+            <summary>
+            Endpoint para buscar por id as presenças
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Eventplus_api_senai.Controllers.PresencaController.GetByMe(System.Guid)">
+            <summary>
+            Endpoint para listar suas presenças
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Eventplus_api_senai.Controllers.TipoEventoController.Get">
+            <summary>
+            Endpoint para listar tipos de eventos
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Eventplus_api_senai.Controllers.TipoEventoController.Post(Eventplus_api_senai.Domais.TipoEvento)">
+            <summary>
+            Endpoint para cadastras novos tipos de eventos
+            </summary>
+            <param name="novoTipoEvento"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Eventplus_api_senai.Controllers.TipoEventoController.GetById(System.Guid)">
+            <summary>
+            Endpoint para buscar tipos de eventos por id
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Eventplus_api_senai.Controllers.TipoEventoController.Delete(System.Guid)">
+            <summary>
+            Endpoint para deletar tipos de eventos
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Eventplus_api_senai.Controllers.TipoUsuarioController.Get">
+            <summary>
+            Endpoint para listar tipos de usuarios.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Eventplus_api_senai.Controllers.TipoUsuarioController.Post(Eventplus_api_senai.Domais.TipoUsuario)">
+            <summary>
+            Endpoint para cadastrar novos tipos de usuarios.
+            </summary>
+            <param name="novoTipoUsuario"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Eventplus_api_senai.Controllers.TipoUsuarioController.GetById(System.Guid)">
+            <summary>
+            Endpoint para buscar tipo usuarios pelo id.
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Eventplus_api_senai.Controllers.TipoUsuarioController.Delete(System.Guid)">
+            <summary>
+            Endpoint para deletar tipos usuarios
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Eventplus_api_senai.Controllers.TipoUsuarioController.Put(System.Guid,Eventplus_api_senai.Domais.TipoUsuario)">
+            <summary>
+            Endpoint para atualizar tipos usuarios
+            </summary>
+            <param name="id"></param>
+            <param name="tipoUsuario"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Eventplus_api_senai.Controllers.UsuarioController.GetById(System.Guid)">
+            <summary>
+            Endpoint para listar usuario por id.
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Eventplus_api_senai.Controllers.UsuarioController.Post(Eventplus_api_senai.Domais.Usuario)">
+            <summary>
+            Endpoint para cadastrar usuario.
+            </summary>
+            <param name="usuario"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Eventplus_api_senai.Migrations.Event">
+            <inheritdoc />
+        </member>
+        <member name="M:Eventplus_api_senai.Migrations.Event.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Eventplus_api_senai.Migrations.Event.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Eventplus_api_senai.Migrations.Event.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:Eventplus_api_senai.Repository.EventoRepository">
+            <summary>
+            Repositório para gerenciamento dos eventos
+            </summary>
+        </member>
+        <member name="M:Eventplus_api_senai.Repository.EventoRepository.#ctor(Eventplus_api_senai.Context.Event_Context)">
+            <summary>
+            Repositório para gerenciamento dos eventos
+            </summary>
+        </member>
+        <member name="M:Eventplus_api_senai.Repository.EventoRepository.Atualizar(System.Guid,Eventplus_api_senai.Domais.Evento)">
+            <summary>
+            Repositório para gerenciamento dos eventos
+            </summary>
+        </member>
+        <member name="M:Eventplus_api_senai.Repository.EventoRepository.Cadastrar(Eventplus_api_senai.Domais.Evento)">
+            <summary>
+            Repositório para gerenciamento dos eventos
+            </summary>
+        </member>
+        <member name="M:Eventplus_api_senai.Repository.EventoRepository.Deletar(System.Guid)">
+            <summary>
+            Repositório para gerenciamento dos eventos
+            </summary>
+        </member>
+        <member name="M:Eventplus_api_senai.Repository.EventoRepository.Listar">
+            <summary>
+            Repositório para gerenciamento dos eventos
+            </summary>
+        </member>
+        <member name="M:Eventplus_api_senai.Repository.EventoRepository.ListarPorId(System.Guid)">
+            <summary>
+            Repositório para gerenciamento dos eventos
+            </summary>
+        </member>
+        <member name="M:Eventplus_api_senai.Repository.EventoRepository.ListarProximosEventos(System.Guid)">
+            <summary>
+            Repositório para gerenciamento dos eventos
+            </summary>
+        </member>
+        <member name="M:Eventplus_api_senai.Repository.EventoRepository.BuscarPorId(System.Guid)">
+            <summary>
+            Repositório para gerenciamento dos eventos
+            </summary>
+        </member>
+    </members>
+</doc>
