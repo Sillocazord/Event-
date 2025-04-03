@@ -1,6 +1,7 @@
 ﻿using Eventplus_api_senai.Context;
 using Eventplus_api_senai.Domais;
 using Eventplus_api_senai.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -24,6 +25,7 @@ namespace Eventplus_api_senai.Controllers
         /// </summary>
         /// <param name="novoFeedback"></param>
         /// <returns></returns>
+        [Authorize]
         [HttpPost]
         public IActionResult Post(Feedback novoFeedback)
         {
@@ -65,6 +67,7 @@ namespace Eventplus_api_senai.Controllers
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
+        [Authorize]
         [HttpDelete("{id}")]
         public IActionResult Delete(Guid id) 
         {
@@ -79,13 +82,14 @@ namespace Eventplus_api_senai.Controllers
             }
         
         }
-        
+
         /// <summary>
         /// Endpoint para buscar Feedbacks por Id dos usuarios
         /// </summary>
         /// <param name="UsuarioId"></param>
         /// <param name="EventoId"></param>
         /// <returns></returns>
+        [Authorize]
         [HttpGet("BuscarPorIdUsuario/{UsuarioId}")]
         public IActionResult GetById(Guid UsuarioId, Guid EventoId)
         {

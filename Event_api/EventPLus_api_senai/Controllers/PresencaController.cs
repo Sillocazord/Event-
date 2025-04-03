@@ -1,5 +1,6 @@
 ﻿using Eventplus_api_senai.Domais;
 using Eventplus_api_senai.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -20,6 +21,7 @@ namespace Eventplus_api_senai.Controllers
         /// Endpoint para Listar Presenças
         /// </summary>
         /// <returns></returns>
+        [Authorize]
         [HttpGet]
         public IActionResult Get()
         {
@@ -39,6 +41,7 @@ namespace Eventplus_api_senai.Controllers
         /// </summary>
         /// <param name="novaPresenca"></param>
         /// <returns></returns>
+        [Authorize]
         [HttpPost] //Copiar o metodo post do professor.
         public IActionResult Post(Presenca novaPresenca)
         {
@@ -60,6 +63,7 @@ namespace Eventplus_api_senai.Controllers
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
+        [Authorize]
         [HttpGet("BuscarPorId/{id}")]
         public IActionResult GetById(Guid id)
         {
@@ -74,13 +78,14 @@ namespace Eventplus_api_senai.Controllers
             }
 
         }
-        
+
         /// <summary>
         /// Endpoint para atualizar presenças.
         /// </summary>
         /// <param name="id"></param>
         /// <param name="presenca"></param>
         /// <returns></returns>
+        [Authorize]
         [HttpPut("{id}")]
         public IActionResult Put(Guid id, Presenca presenca)
         {
@@ -101,6 +106,7 @@ namespace Eventplus_api_senai.Controllers
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
+        [Authorize]
         [HttpGet("ListarMinhasPresencas/{id}")]
         public IActionResult GetByMe(Guid id)
         {

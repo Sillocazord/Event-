@@ -1,5 +1,6 @@
 ﻿using Eventplus_api_senai.Domais;
 using Eventplus_api_senai.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -39,6 +40,7 @@ namespace Eventplus_api_senai.Controllers
         /// </summary>
         /// <param name="novoEvento"></param>
         /// <returns></returns>
+        [Authorize]
         [HttpPost]
         public IActionResult Post(Evento evento)
         {
@@ -59,6 +61,7 @@ namespace Eventplus_api_senai.Controllers
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
+        [Authorize]
         [HttpDelete("{id}")]
         public IActionResult Delete(Guid id)
         {
@@ -80,6 +83,7 @@ namespace Eventplus_api_senai.Controllers
         /// <param name="id"></param>
         /// <param name="novoEvento"></param>
         /// <returns></returns>
+        [Authorize]
         [HttpPut("{id}")]
         public IActionResult Put(Guid id, Evento novoEvento)
         {

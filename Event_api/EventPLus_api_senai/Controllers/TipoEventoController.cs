@@ -1,5 +1,6 @@
 ﻿using Eventplus_api_senai.Domais;
 using Eventplus_api_senai.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -41,6 +42,7 @@ namespace Eventplus_api_senai.Controllers
         /// </summary>
         /// <param name="novoTipoEvento"></param>
         /// <returns></returns>
+        [Authorize]
         [HttpPost]
         public IActionResult Post(TipoEvento novoTipoEvento)
         {
@@ -82,8 +84,9 @@ namespace Eventplus_api_senai.Controllers
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
+        [Authorize]
         [HttpDelete("{id}")]
-        public ActionResult Delete(Guid id) 
+        public ActionResult Delete(Guid id)
         {
             try
             {
@@ -95,11 +98,17 @@ namespace Eventplus_api_senai.Controllers
 
                 return BadRequest(e.Message);
             }
-        
-        
+
+
         }
 
-
+        /// <summary>
+        /// Endpoint para atualizar tipos de eventos
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="tipoEvento"></param>
+        /// <returns></returns>
+        [Authorize]
         [HttpPut("{id}")]
         public IActionResult Put(Guid id, TipoEvento tipoEvento)
         {
