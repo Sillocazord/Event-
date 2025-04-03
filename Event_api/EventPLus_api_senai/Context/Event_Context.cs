@@ -25,7 +25,7 @@ namespace Eventplus_api_senai.Context
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer("Server=NOTE40-S28\\SQLEXPRESS; Database=Event; User Id=sa; Pwd=Senai@134; TrustServerCertificate=true;");
+                optionsBuilder.UseSqlServer("Server=NOTE40-S28\\SQLEXPRESS; Database=EventPlus; User Id=sa; Pwd=Senai@134; TrustServerCertificate=true;");
             }
 
         }

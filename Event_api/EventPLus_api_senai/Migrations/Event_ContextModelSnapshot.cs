@@ -81,7 +81,7 @@ namespace Eventplus_api_senai.Migrations
                     b.ToTable("Feedback");
                 });
 
-            modelBuilder.Entity("Eventplus_api_senai.Domais.Institucao", b =>
+            modelBuilder.Entity("Eventplus_api_senai.Domais.Instituicao", b =>
                 {
                     b.Property<Guid>("InstituicaoID")
                         .ValueGeneratedOnAdd()
@@ -196,7 +196,7 @@ namespace Eventplus_api_senai.Migrations
 
             modelBuilder.Entity("Eventplus_api_senai.Domais.Evento", b =>
                 {
-                    b.HasOne("Eventplus_api_senai.Domais.Institucao", "Instituicao")
+                    b.HasOne("Eventplus_api_senai.Domais.Instituicao", "Instituicao")
                         .WithMany()
                         .HasForeignKey("InstituicaoID")
                         .OnDelete(DeleteBehavior.Cascade)

@@ -419,10 +419,12 @@
         "tags": [
           "Presenca"
         ],
+        "summary": "Endpoint para atualizar presenças.",
         "parameters": [
           {
             "name": "id",
             "in": "path",
+            "description": "",
             "required": true,
             "schema": {
               "type": "string",
@@ -431,6 +433,7 @@
           }
         ],
         "requestBody": {
+          "description": "",
           "content": {
             "application/json": {
               "schema": {

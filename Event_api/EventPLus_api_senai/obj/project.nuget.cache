@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "e6FY+hrVTDo=",
+  "dgSpecHash": "e649i5Gvk5c=",
   "success": true,
-  "projectFilePath": "C:\\Users\\59963156886\\Desktop\\Event-\\Event_api\\Eventplus_api_senai\\Eventplus_api_senai.csproj",
+  "projectFilePath": "C:\\Users\\59963156886\\Desktop\\Event-\\Event_api\\EventPLus_api_senai\\Eventplus_api_senai.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\59963156886\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\59963156886\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",

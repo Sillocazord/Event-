@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\59963156886\\Desktop\\Event-\\Event_api\\Eventplus_api_senai\\Eventplus_api_senai.csproj": {}
+    "C:\\Users\\59963156886\\Desktop\\Event-\\Event_api\\EventPLus_api_senai\\Eventplus_api_senai.csproj": {}
   },
   "projects": {
-    "C:\\Users\\59963156886\\Desktop\\Event-\\Event_api\\Eventplus_api_senai\\Eventplus_api_senai.csproj": {
+    "C:\\Users\\59963156886\\Desktop\\Event-\\Event_api\\EventPLus_api_senai\\Eventplus_api_senai.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\59963156886\\Desktop\\Event-\\Event_api\\Eventplus_api_senai\\Eventplus_api_senai.csproj",
+        "projectUniqueName": "C:\\Users\\59963156886\\Desktop\\Event-\\Event_api\\EventPLus_api_senai\\Eventplus_api_senai.csproj",
         "projectName": "Eventplus_api_senai",
-        "projectPath": "C:\\Users\\59963156886\\Desktop\\Event-\\Event_api\\Eventplus_api_senai\\Eventplus_api_senai.csproj",
+        "projectPath": "C:\\Users\\59963156886\\Desktop\\Event-\\Event_api\\EventPLus_api_senai\\Eventplus_api_senai.csproj",
         "packagesPath": "C:\\Users\\59963156886\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\59963156886\\Desktop\\Event-\\Event_api\\Eventplus_api_senai\\obj\\",
         "projectStyle": "PackageReference",

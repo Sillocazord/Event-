@@ -74,7 +74,13 @@ namespace Eventplus_api_senai.Controllers
             }
 
         }
-
+        
+        /// <summary>
+        /// Endpoint para atualizar presenças.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="presenca"></param>
+        /// <returns></returns>
         [HttpPut("{id}")]
         public IActionResult Put(Guid id, Presenca presenca)
         {

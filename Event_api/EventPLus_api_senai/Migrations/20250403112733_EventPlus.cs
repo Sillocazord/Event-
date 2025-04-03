@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Eventplus_api_senai.Migrations
 {
     /// <inheritdoc />
-    public partial class Event : Migration
+    public partial class EventPlus : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

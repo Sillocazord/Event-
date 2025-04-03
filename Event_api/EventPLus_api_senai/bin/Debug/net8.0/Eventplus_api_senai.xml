@@ -101,6 +101,14 @@
             <param name="id"></param>
             <returns></returns>
         </member>
+        <member name="M:Eventplus_api_senai.Controllers.PresencaController.Put(System.Guid,Eventplus_api_senai.Domais.Presenca)">
+            <summary>
+            Endpoint para atualizar presenças.
+            </summary>
+            <param name="id"></param>
+            <param name="presenca"></param>
+            <returns></returns>
+        </member>
         <member name="M:Eventplus_api_senai.Controllers.PresencaController.GetByMe(System.Guid)">
             <summary>
             Endpoint para listar suas presenças
@@ -184,16 +192,16 @@
             <param name="usuario"></param>
             <returns></returns>
         </member>
-        <member name="T:Eventplus_api_senai.Migrations.Event">
+        <member name="T:Eventplus_api_senai.Migrations.EventPlus">
             <inheritdoc />
         </member>
-        <member name="M:Eventplus_api_senai.Migrations.Event.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+        <member name="M:Eventplus_api_senai.Migrations.EventPlus.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
             <inheritdoc />
         </member>
-        <member name="M:Eventplus_api_senai.Migrations.Event.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+        <member name="M:Eventplus_api_senai.Migrations.EventPlus.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
             <inheritdoc />
         </member>
-        <member name="M:Eventplus_api_senai.Migrations.Event.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+        <member name="M:Eventplus_api_senai.Migrations.EventPlus.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
             <inheritdoc />
         </member>
         <member name="T:Eventplus_api_senai.Repository.EventoRepository">
