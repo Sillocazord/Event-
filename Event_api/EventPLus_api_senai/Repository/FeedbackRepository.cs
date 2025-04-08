@@ -111,5 +111,37 @@ namespace Eventplus_api_senai.Repository
                 throw;
             }
         }
+
+        public List<Feedback> ListarSomenteExibe(Guid id)
+        {
+            try
+            {
+                return _context.Feedback
+                    .Select(c => new Feedback
+                    {
+                        FeedbackID = c.FeedbackID,
+                        Descricao = c.Descricao,
+                        Exibir = c.Exibir,
+                        UsuarioID = c.UsuarioID,
+                        EventoID = c.EventoID,
+
+                        Usuario = new Usuario
+                        {
+                            Nome = c.Usuario!.Nome
+                        },
+
+                        Evento = new Evento
+                        {
+                            NomeEvento = c.Evento!.NomeEvento,
+                        }
+
+                    }).Where(c => c.Exibir == true && c.EventoID == id).ToList();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
     }
 }

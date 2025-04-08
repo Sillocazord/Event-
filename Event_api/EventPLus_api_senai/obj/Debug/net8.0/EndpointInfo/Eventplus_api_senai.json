@@ -204,7 +204,7 @@
         "tags": [
           "Feedback"
         ],
-        "summary": "Endpoint para cadastrar Feedbackss",
+        "summary": "Endpoint para cadastrar Feedback/ComentarioEventos",
         "requestBody": {
           "description": "",
           "content": {
@@ -581,10 +581,12 @@
         "tags": [
           "TipoEvento"
         ],
+        "summary": "Endpoint para atualizar tipos de eventos",
         "parameters": [
           {
             "name": "id",
             "in": "path",
+            "description": "",
             "required": true,
             "schema": {
               "type": "string",
@@ -593,6 +595,7 @@
           }
         ],
         "requestBody": {
+          "description": "",
           "content": {
             "application/json": {
               "schema": {

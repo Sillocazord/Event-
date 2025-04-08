@@ -1,4 +1,6 @@
-﻿using Eventplus_api_senai.Context;
+﻿using Azure;
+using Azure.AI.ContentSafety;
+using Eventplus_api_senai.Context;
 using Eventplus_api_senai.Domais;
 using Eventplus_api_senai.Interfaces;
 using Microsoft.AspNetCore.Authorization;
@@ -13,33 +15,47 @@ namespace Eventplus_api_senai.Controllers
     public class FeedbackController : ControllerBase
     {
         private readonly IFeedbackRepository _feedbackRepository;
-
-        public FeedbackController(IFeedbackRepository feedbackRepository)
+        private readonly ContentSafetyClient _contentSafetyClient;
+        public FeedbackController(ContentSafetyClient contentSafetyClient,IFeedbackRepository feedbackRepository)
         {
             _feedbackRepository = feedbackRepository;
-
+            _contentSafetyClient = contentSafetyClient;
         }
 
         /// <summary>
-        /// Endpoint para cadastrar Feedbackss
+        /// Endpoint para cadastrar Feedback/ComentarioEventos
         /// </summary>
-        /// <param name="novoFeedback"></param>
+        /// <param name="feedback"></param>
         /// <returns></returns>
-        [Authorize]
         [HttpPost]
-        public IActionResult Post(Feedback novoFeedback)
+        public async Task<IActionResult> Post(Feedback feedback) 
         {
             try
             {
-                _feedbackRepository.Cadastrar(novoFeedback);
-                return Created();
+                if (string.IsNullOrEmpty(feedback.Descricao)) 
+                {
+                    return BadRequest("O Texto a ser moderado não pode estar vazio!");
+                }
+                //Criar objeto de análise do content safety
+                var request = new AnalyzeTextOptions(feedback.Descricao);
+
+                //Chamar a API d Content Safety
+                Response<AnalyzeTextResult> response = await _contentSafetyClient.AnalyzeTextAsync(request);
+
+                //Verificar se o texto analisado tem alguma severidade ou indecencia(ofensivo)
+                bool temConteudoImpropio = response.Value.CategoriesAnalysis.Any(c => c.Severity > 0);
+                //caso aqui dê true, comentario exibe sera falso e não ira exiir porque é ofensivo, caso contrario, o comentario pode ser exibido
+                //Se o conteudo for imprópio, não exibe, caso contrário, exibe
+                feedback.Exibir = !temConteudoImpropio;
+
+                //Cadastra de fato o comentário
+                _feedbackRepository.Cadastrar(feedback);
+                return Ok();
             }
             catch (Exception e)
             {
-
                 return BadRequest(e.Message);
-            }
-        
+            }        
         }
 
         /// <summary>
@@ -47,7 +63,7 @@ namespace Eventplus_api_senai.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet]
-        public IActionResult Get(Guid id) 
+        public IActionResult Get(Guid id)
         {
             try
             {
@@ -69,18 +85,18 @@ namespace Eventplus_api_senai.Controllers
         /// <returns></returns>
         [Authorize]
         [HttpDelete("{id}")]
-        public IActionResult Delete(Guid id) 
+        public IActionResult Delete(Guid id)
         {
             try
             {
                 _feedbackRepository.Deletar(id);
                 return NoContent();
             }
-            catch (Exception )
+            catch (Exception)
             {
                 throw;
             }
-        
+
         }
 
         /// <summary>
@@ -105,8 +121,6 @@ namespace Eventplus_api_senai.Controllers
             }
 
         }
-
-
-
     }
 }
+

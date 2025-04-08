@@ -2,6 +2,23 @@
   "version": 3,
   "targets": {
     "net8.0": {
+      "Azure.AI.ContentSafety/1.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Azure.Core": "1.36.0",
+          "System.Text.Json": "4.7.2"
+        },
+        "compile": {
+          "lib/netstandard2.0/Azure.AI.ContentSafety.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Azure.AI.ContentSafety.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Azure.Core/1.38.0": {
         "type": "package",
         "dependencies": {
@@ -1695,6 +1712,22 @@
     }
   },
   "libraries": {
+    "Azure.AI.ContentSafety/1.0.0": {
+      "sha512": "62UgYaWYXlieHXnvF6EZjPahgYcuRe0jhsDZu8pMGhvUwkEsgmL4d2ag3Wlk+nYdLbKCE3TIPJmAPI/U/BVYJQ==",
+      "type": "package",
+      "path": "azure.ai.contentsafety/1.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "CHANGELOG.md",
+        "README.md",
+        "azure.ai.contentsafety.1.0.0.nupkg.sha512",
+        "azure.ai.contentsafety.nuspec",
+        "azureicon.png",
+        "lib/netstandard2.0/Azure.AI.ContentSafety.dll",
+        "lib/netstandard2.0/Azure.AI.ContentSafety.xml"
+      ]
+    },
     "Azure.Core/1.38.0": {
       "sha512": "IuEgCoVA0ef7E4pQtpC3+TkPbzaoQfa77HlfJDmfuaJUCVJmn7fT0izamZiryW5sYUFKizsftIxMkXKbgIcPMQ==",
       "type": "package",
@@ -4966,6 +4999,7 @@
   },
   "projectFileDependencyGroups": {
     "net8.0": [
+      "Azure.AI.ContentSafety >= 1.0.0",
       "BCrypt.Net-Next >= 4.0.3",
       "Microsoft.AspNetCore.Authentication.JwtBearer >= 8.0.13",
       "Microsoft.EntityFrameworkCore >= 9.0.3",
@@ -4986,7 +5020,7 @@
       "projectName": "Eventplus_api_senai",
       "projectPath": "C:\\Users\\59963156886\\Desktop\\Event-\\Event_api\\Eventplus_api_senai\\Eventplus_api_senai.csproj",
       "packagesPath": "C:\\Users\\59963156886\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\59963156886\\Desktop\\Event-\\Event_api\\Eventplus_api_senai\\obj\\",
+      "outputPath": "C:\\Users\\59963156886\\Desktop\\Event-\\Event_api\\EventPLus_api_senai\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -5025,6 +5059,10 @@
       "net8.0": {
         "targetAlias": "net8.0",
         "dependencies": {
+          "Azure.AI.ContentSafety": {
+            "target": "Package",
+            "version": "[1.0.0, )"
+          },
           "BCrypt.Net-Next": {
             "target": "Package",
             "version": "[4.0.3, )"

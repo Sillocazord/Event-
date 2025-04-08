@@ -176,3 +176,4 @@ C:\Users\59963156886\Desktop\Event-\Event_api\Eventplus_api_senai\obj\Debug\net8
 C:\Users\59963156886\Desktop\Event-\Event_api\Eventplus_api_senai\obj\Debug\net8.0\Eventplu.2F54E711.Up2Date
 C:\Users\59963156886\Desktop\Event-\Event_api\Eventplus_api_senai\bin\Debug\net8.0\Eventplus_api_senai.xml
 C:\Users\59963156886\Desktop\Event-\Event_api\Eventplus_api_senai\obj\Debug\net8.0\Eventplus_api_senai.xml
+C:\Users\59963156886\Desktop\Event-\Event_api\Eventplus_api_senai\bin\Debug\net8.0\Azure.AI.ContentSafety.dll

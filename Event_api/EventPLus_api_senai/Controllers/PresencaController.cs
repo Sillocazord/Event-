@@ -21,7 +21,6 @@ namespace Eventplus_api_senai.Controllers
         /// Endpoint para Listar Presenças
         /// </summary>
         /// <returns></returns>
-        [Authorize]
         [HttpGet]
         public IActionResult Get()
         {

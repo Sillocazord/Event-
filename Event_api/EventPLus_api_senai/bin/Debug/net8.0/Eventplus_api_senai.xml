@@ -48,9 +48,9 @@
         </member>
         <member name="M:Eventplus_api_senai.Controllers.FeedbackController.Post(Eventplus_api_senai.Domais.Feedback)">
             <summary>
-            Endpoint para cadastrar Feedbackss
+            Endpoint para cadastrar Feedback/ComentarioEventos
             </summary>
-            <param name="novoFeedback"></param>
+            <param name="feedback"></param>
             <returns></returns>
         </member>
         <member name="M:Eventplus_api_senai.Controllers.FeedbackController.Get(System.Guid)">
@@ -141,6 +141,14 @@
             Endpoint para deletar tipos de eventos
             </summary>
             <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Eventplus_api_senai.Controllers.TipoEventoController.Put(System.Guid,Eventplus_api_senai.Domais.TipoEvento)">
+            <summary>
+            Endpoint para atualizar tipos de eventos
+            </summary>
+            <param name="id"></param>
+            <param name="tipoEvento"></param>
             <returns></returns>
         </member>
         <member name="M:Eventplus_api_senai.Controllers.TipoUsuarioController.Get">

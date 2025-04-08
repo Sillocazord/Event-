@@ -119,7 +119,7 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "novoFeedback",
+        "Name": "feedback",
         "Type": "Eventplus_api_senai.Domais.Feedback",
         "IsRequired": true
       }

@@ -1,4 +1,6 @@
 using System.Reflection;
+using Azure;
+using Azure.AI.ContentSafety;
 using Eventplus_api_senai.Context;
 using Eventplus_api_senai.Domais;
 using Eventplus_api_senai.Interfaces;
@@ -8,6 +10,18 @@ using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
+
+//Configuração do Azure Content Safety
+var endpoint = builder.Configuration["AzureContentSafety:Endpoint"];
+var apiKey = builder.Configuration["AzureContentSafety:ApiKey"];
+
+    if (string.IsNullOrEmpty(endpoint) || string.IsNullOrEmpty(apiKey))
+    {
+    throw new InvalidOperationException("Azure Content Safety: Endpoint ou API Key não foram configurados");
+    }
+
+var client = new ContentSafetyClient(new Uri(endpoint), new AzureKeyCredential(apiKey));
+builder.Services.AddSingleton(client);
 
 builder.Services // Acessa a coleção de serviços da aplicação (Dependency Injection)
     .AddControllers() // Adiciona suporte a controladores na API (MVC ou Web API)
