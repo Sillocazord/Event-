@@ -26,3 +26,6 @@ System.IdentityModel.Tokens.Jwt (8.6.1)
 🛰️Contribuição:
 
 Se quiser contribuir com melhorias para esta API, fique à vontade para abrir uma issue ou enviar um pull request.
+
+Sobre a API e minha jornada de conhecimento:
+API é muito legal! Eu me diverti bastante fazendo, mesmo com algumas dificuldades e alguns erros, consegui pegar e desenvolver bem a API e entregar um projeto bem funcional e profissional, a jornada para o fim é longa, mais um dia conseguirei chegar, muito top!
