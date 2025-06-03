@@ -42,7 +42,6 @@ namespace Eventplus_api_senai.Controllers
         /// </summary>
         /// <param name="novoTipoEvento"></param>
         /// <returns></returns>
-        [Authorize]
         [HttpPost]
         public IActionResult Post(TipoEvento novoTipoEvento)
         {
@@ -84,7 +83,6 @@ namespace Eventplus_api_senai.Controllers
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        [Authorize]
         [HttpDelete("{id}")]
         public ActionResult Delete(Guid id)
         {
@@ -108,7 +106,6 @@ namespace Eventplus_api_senai.Controllers
         /// <param name="id"></param>
         /// <param name="tipoEvento"></param>
         /// <returns></returns>
-        [Authorize]
         [HttpPut("{id}")]
         public IActionResult Put(Guid id, TipoEvento tipoEvento)
         {

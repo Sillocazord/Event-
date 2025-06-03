@@ -67,7 +67,7 @@ namespace Eventplus_api_senai.Repository
                     novoTipoUsuario.TituloTipoUsuario = tipoUsuario.TituloTipoUsuario;
                 
                 }
-                _context.TipoUsuario.Update(tipoUsuario!);
+                _context.TipoUsuario.Update(novoTipoUsuario!);
                 _context.SaveChanges();
             }
             catch (Exception)

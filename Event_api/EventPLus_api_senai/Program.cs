@@ -5,6 +5,7 @@ using Eventplus_api_senai.Context;
 using Eventplus_api_senai.Domais;
 using Eventplus_api_senai.Interfaces;
 using Eventplus_api_senai.Repository;
+using Microsoft.Azure.CognitiveServices.ContentModerator;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
@@ -15,10 +16,10 @@ var builder = WebApplication.CreateBuilder(args);
 var endpoint = builder.Configuration["AzureContentSafety:Endpoint"];
 var apiKey = builder.Configuration["AzureContentSafety:ApiKey"];
 
-    if (string.IsNullOrEmpty(endpoint) || string.IsNullOrEmpty(apiKey))
-    {
+if (string.IsNullOrEmpty(endpoint) || string.IsNullOrEmpty(apiKey))
+{
     throw new InvalidOperationException("Azure Content Safety: Endpoint ou API Key não foram configurados");
-    }
+}
 
 var client = new ContentSafetyClient(new Uri(endpoint), new AzureKeyCredential(apiKey));
 builder.Services.AddSingleton(client);
@@ -148,6 +149,13 @@ builder.Services.AddCors(options =>
         });
 });
 
+
+builder.Services.AddSingleton(provider => new ContentModeratorClient(
+    new ApiKeyServiceClientCredentials("A8CmWDjKwCXVMC01qx37hHVROGjEcZLh6bz4oPGD8w2xz06z1EuLJQQJ99BDACYeBjFXJ3w3AAAHACOGI4j8"))
+{
+    Endpoint = "https://moderatorservicesillas.cognitiveservices.azure.com/"
+
+});
 
 var app = builder.Build();
 
