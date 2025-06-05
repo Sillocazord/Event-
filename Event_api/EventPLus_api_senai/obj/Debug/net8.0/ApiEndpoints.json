@@ -180,6 +180,22 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "Eventplus_api_senai.Controllers.FeedbackController",
+    "Method": "GetExibe",
+    "RelativePath": "api/Feedback/ListarSomenteExibe",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Eventplus_api_senai.Controllers.LoginController",
     "Method": "Login",
     "RelativePath": "api/Login",

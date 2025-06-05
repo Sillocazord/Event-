@@ -40,7 +40,7 @@ namespace Eventplus_api_senai.Controllers
         /// </summary>
         /// <param name="novaPresenca"></param>
         /// <returns></returns>
-        [Authorize]
+        //[Authorize]
         [HttpPost] //Copiar o metodo post do professor.
         public IActionResult Post(Presenca novaPresenca)
         {
@@ -62,7 +62,7 @@ namespace Eventplus_api_senai.Controllers
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        [Authorize]
+        //[Authorize]
         [HttpGet("BuscarPorId/{id}")]
         public IActionResult GetById(Guid id)
         {
@@ -84,7 +84,7 @@ namespace Eventplus_api_senai.Controllers
         /// <param name="id"></param>
         /// <param name="presenca"></param>
         /// <returns></returns>
-        [Authorize]
+        //[Authorize]
         [HttpPut("{id}")]
         public IActionResult Put(Guid id, Presenca presenca)
         {
@@ -105,7 +105,7 @@ namespace Eventplus_api_senai.Controllers
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        [Authorize]
+        //[Authorize]
         [HttpGet("ListarMinhasPresencas/{id}")]
         public IActionResult GetByMe(Guid id)
         {

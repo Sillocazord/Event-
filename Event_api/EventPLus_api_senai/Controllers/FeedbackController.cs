@@ -16,11 +16,15 @@ namespace Eventplus_api_senai.Controllers
     {
         private readonly IFeedbackRepository _feedbackRepository;
         private readonly ContentSafetyClient _contentSafetyClient;
-        public FeedbackController(ContentSafetyClient contentSafetyClient,IFeedbackRepository feedbackRepository)
+        private readonly Event_Context _contexto;
+       
+        public FeedbackController(ContentSafetyClient contentSafetyClient,IFeedbackRepository feedbackRepository, Event_Context contexto)
         {
             _feedbackRepository = feedbackRepository;
             _contentSafetyClient = contentSafetyClient;
+            _contexto = contexto;
         }
+
 
         /// <summary>
         /// Endpoint para cadastrar Feedback/ComentarioEventos
@@ -32,6 +36,17 @@ namespace Eventplus_api_senai.Controllers
         {
             try
             {
+                Evento? eventoBuscado = _contexto.Evento.FirstOrDefault(e => e.EventoID == feedback.EventoID);
+                if (eventoBuscado == null)
+                {
+                    return NotFound("Evento não encontrado");
+                }
+
+                if (eventoBuscado.DataEvento >= DateTime.UtcNow)
+                {
+                    return BadRequest("Não é possível comentar um evento que ainda não aconteceu!");
+                }
+
                 if (string.IsNullOrEmpty(feedback.Descricao)) 
                 {
                     return BadRequest("O Texto a ser moderado não pode estar vazio!");
@@ -56,6 +71,20 @@ namespace Eventplus_api_senai.Controllers
             {
                 return BadRequest(e.Message);
             }        
+        }
+
+        [HttpGet("ListarSomenteExibe")]
+        public IActionResult GetExibe(Guid id)
+        {
+            try
+            {
+                return Ok(_feedbackRepository.ListarSomenteExibe(id));
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
         /// <summary>

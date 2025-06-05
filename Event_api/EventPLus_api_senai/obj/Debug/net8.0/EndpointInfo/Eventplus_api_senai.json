@@ -253,6 +253,28 @@
         }
       }
     },
+    "/api/Feedback/ListarSomenteExibe": {
+      "get": {
+        "tags": [
+          "Feedback"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Feedback/{id}": {
       "delete": {
         "tags": [
