@@ -1,6 +1,7 @@
 ﻿using Eventplus_api_senai.Context;
 using Eventplus_api_senai.Domais;
 using Eventplus_api_senai.Interfaces;
+using Microsoft.EntityFrameworkCore;
 
 namespace Eventplus_api_senai.Repository
 {
@@ -126,24 +127,43 @@ namespace Eventplus_api_senai.Repository
             }
         }
 
-
-        /// <summary>
-        /// Repositório para gerenciamento dos eventos
-        /// </summary>
         public List<Evento> ListarPorId(Guid id)
         {
             try
             {
-                List<Evento> listaEvento = _context.Evento.Where(p => p.EventoID == id).ToList();
-                return listaEvento;
+                return _context.Evento
+                    .Include(e => e.Presenca)
+                    .Where(e => e.Presenca!.Any(p => p.UsuarioID == id && p.Situacao == true))
+                    .Select(e => new Evento
+                    {
+                        EventoID = e.EventoID,
+                        NomeEvento = e.NomeEvento,
+                        Descricao = e.Descricao,
+                        DataEvento = e.DataEvento,
+                        TipoEventoID = e.TipoEventoID,
+                        TipoEvento = new TipoEvento
+                        {
+                            TipoEventoID = e.TipoEventoID,
+                            TituloTipoEvento = e.TipoEvento!.TituloTipoEvento
+                        },
+                        InstituicaoID = e.InstituicaoID,
+                        Instituicao = new Instituicao
+                        {
+                            InstituicaoID = e.InstituicaoID,
+                            NomeFantasia = e.Instituicao!.NomeFantasia
+                        },
+                        // Aqui você monta uma lista com as presenças válidas (opcional)
+                        Presenca = e.Presenca
+                            .Where(p => p.UsuarioID == id && p.Situacao == true)
+                            .ToList()
+                    })
+                    .ToList();
             }
             catch (Exception)
             {
-
                 throw;
             }
         }
-
         /// <summary>
         /// Repositório para gerenciamento dos eventos
         /// </summary>

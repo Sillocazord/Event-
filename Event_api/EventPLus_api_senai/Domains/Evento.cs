@@ -19,7 +19,7 @@ namespace Eventplus_api_senai.Domais
         [ForeignKey("InstituicaoID")]
         public Instituicao? Instituicao { get; set; }
 
-        public Presenca? Presenca { get; set; } //public PresencasEventos? PresencasEventos {get; set;}
+        public ICollection<Presenca>? Presenca { get; set; } //public PresencasEventos? PresencasEventos {get; set;}
 
         [Column(TypeName ="VARCHAR(50)")]
         [Required(ErrorMessage ="O nome do evento é obrigatorio!")]

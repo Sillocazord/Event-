@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Eventplus_api_senai")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+397aeaec1f1bdfe9eb080ecf4a531517ba836bb1")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+694aefbfb65a163900f432c6180d57a2bbfa8d38")]
 [assembly: System.Reflection.AssemblyProductAttribute("Eventplus_api_senai")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Eventplus_api_senai")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

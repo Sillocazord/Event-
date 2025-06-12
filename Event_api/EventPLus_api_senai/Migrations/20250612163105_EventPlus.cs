@@ -180,8 +180,7 @@ namespace Eventplus_api_senai.Migrations
             migrationBuilder.CreateIndex(
                 name: "IX_Presenca_EventoID",
                 table: "Presenca",
-                column: "EventoID",
-                unique: true);
+                column: "EventoID");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Presenca_UsuarioID",

@@ -898,7 +898,11 @@
             "$ref": "#/components/schemas/Instituicao"
           },
           "presenca": {
-            "$ref": "#/components/schemas/Presenca"
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Presenca"
+            },
+            "nullable": true
           },
           "nomeEvento": {
             "minLength": 1,

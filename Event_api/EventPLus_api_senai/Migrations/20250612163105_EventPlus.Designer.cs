@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Eventplus_api_senai.Migrations
 {
     [DbContext(typeof(Event_Context))]
-    [Migration("20250403112733_EventPlus")]
+    [Migration("20250612163105_EventPlus")]
     partial class EventPlus
     {
         /// <inheritdoc />
@@ -128,8 +128,7 @@ namespace Eventplus_api_senai.Migrations
 
                     b.HasKey("PresencaID");
 
-                    b.HasIndex("EventoID")
-                        .IsUnique();
+                    b.HasIndex("EventoID");
 
                     b.HasIndex("UsuarioID");
 
@@ -238,8 +237,8 @@ namespace Eventplus_api_senai.Migrations
             modelBuilder.Entity("Eventplus_api_senai.Domais.Presenca", b =>
                 {
                     b.HasOne("Eventplus_api_senai.Domais.Evento", "Evento")
-                        .WithOne("Presenca")
-                        .HasForeignKey("Eventplus_api_senai.Domais.Presenca", "EventoID")
+                        .WithMany("Presenca")
+                        .HasForeignKey("EventoID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

@@ -242,11 +242,6 @@
             Repositório para gerenciamento dos eventos
             </summary>
         </member>
-        <member name="M:Eventplus_api_senai.Repository.EventoRepository.ListarPorId(System.Guid)">
-            <summary>
-            Repositório para gerenciamento dos eventos
-            </summary>
-        </member>
         <member name="M:Eventplus_api_senai.Repository.EventoRepository.ListarProximosEventos(System.Guid)">
             <summary>
             Repositório para gerenciamento dos eventos
