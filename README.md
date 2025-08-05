@@ -1,5 +1,5 @@
 
-🪙EventPlus - A Sua Plataforma de Eventos.
+#🪙EventPlus - A Sua Plataforma de Eventos.
 
 🌟Descrição:
 
